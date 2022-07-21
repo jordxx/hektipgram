@@ -1,0 +1,32 @@
+[
+    {
+        "userName": "Admin",
+        "email": "Admin@gmail.com",
+        "password": "Admin",
+        "role": true
+    },
+    {
+        "userName": "Diluc88",
+        "email": "diluctamvan88@gmail.com",
+        "password": "DiluC88",
+        "role": false
+    },
+    {
+        "userName": "RazorMaung",
+        "email": "RazorMaung@gmail.com",
+        "password": "AingMaung",
+        "role": false
+    },
+    {
+        "userName": "Monalisa",
+        "email": "Monalisa@gmail.com",
+        "password": "LISAMONA18",
+        "role": false
+    },
+    {
+        "userName": "lisaBP",
+        "email": "lisa.hitamMerahmuda@gmail.com",
+        "password": "lisaburiq",
+        "role": false
+    }
+]

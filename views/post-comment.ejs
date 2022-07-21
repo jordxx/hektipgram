@@ -1,0 +1,91 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Comment Section</title>
+  </head>
+  <body>
+    <%- include('./partials/nav') %>
+
+    <div class="container m-auto mt-8 max-w-4xl border border-slate-300">
+      <div class="flex justify-between p-3">
+        <div class="flex">
+          <div
+            class="rounded-full h-8 w-8 bg-gray-500 flex items-center justify-center overflow-hidden"
+          >
+            <img
+              src="https://t4.ftcdn.net/jpg/00/65/77/27/360_F_65772719_A1UV5kLi5nCEWI0BNLLiFaBPEkUbv5Fv.jpg"
+              alt="profilepic"
+            />
+          </div>
+          <span class="pt-1 ml-2 font-bold text-sm"
+            ><%= post.User.userName %></span
+          >
+        </div>
+        <span class="px-2 hover:bg-gray-300 cursor-pointer rounded"
+          ><i class="fas fa-ellipsis-h pt-2 text-lg"></i
+        ></span>
+      </div>
+      <img
+        class="bg-cover w-full object-cover object-bottom"
+        src="<%= post.imageUrl %>"
+      />
+      <div class="px-3 pb-2">
+        <div class="pt-2">
+          <i class="far fa-heart cursor-pointer"></i>
+          <span class="text-sm text-gray-400 font-medium"
+            ><%= post.like %> <%= post.like === 1 || post.like === 0 ?
+            "like":"likes"%>
+          </span>
+        </div>
+        <div class="pt-1">
+          <div class="mb-2 text-sm">
+            <span class="font-medium mr-2"><%= post.User.userName %></span
+            ><%=post.caption %>
+          </div>
+        </div>
+        <div class="text-sm mb-2 text-gray-400 cursor-pointer font-medium">
+          <form action="/comment/<%= post.id %>/<%= UserId %>" method="post">
+            <label class="text-center" for="comment">Reply:</label>
+            <textarea
+              name="comment"
+              id="comment"
+              cols="30"
+              rows="1"
+              class="border border-slate-500"
+            ></textarea>
+            <button type="submit">Comment</button>
+          </form>
+        </div>
+        <% post.Comments.forEach(el => { %>
+        <div class="mb-2">
+          <div class="mb-2 text-sm">
+            <span class="font-medium mr-2"><%= el.User.userName %></span> <%=
+            el.comment %>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+      <% if (post.UserId === UserId) { %>
+      <div class="text-right">
+        <a href="/post/<%= post.id %>/edit">
+          <button
+            class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+          >
+            Edit Post
+          </button>
+        </a>
+        <a href="/post/<%= post.id %>/delete">
+          <button
+            class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+          >
+            Delete Post
+          </button>
+        </a>
+      </div>
+      <% } %>
+    </div>
+  </body>
+</html>

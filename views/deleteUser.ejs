@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete User</title>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>UserName</th>
+        <th>Full Name</th>
+        <th>Created At</th>
+        <th>Delete User</th>
+      </tr>
+      <% user.forEach(el => { %> <% if (el.role === false) { %>
+      <tr>
+        <td><%= el.userName %></td>
+        <td><%= el.Profile.fullName %></td>
+        <td><%= timeSince(el.createdAt) %></td>
+        <td>
+          <a href="/user/<%= el.id %>/delete">
+            <button>DELETE /user/<%= el.id %>/delete</button>
+          </a>
+        </td>
+      </tr>
+      <% } %> <% }) %>
+    </table>
+  </body>
+</html>

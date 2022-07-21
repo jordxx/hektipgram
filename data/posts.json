@@ -1,0 +1,30 @@
+[
+    {
+        "caption": "Indah nya sunrise di puncak gunung",
+        "imageUrl": "https://images.unsplash.com/photo-1510784722466-f2aa9c52fff6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+        "TagId": 1,
+        "UserId": 2,
+        "like": 0
+    },
+    {
+        "caption": "Vacation!!",
+        "imageUrl": "https://cdn.pixabay.com/photo/2014/12/16/22/25/woman-570883_1280.jpg",
+        "TagId": 2,
+        "UserId": 3,
+        "like": 0
+    },
+    {
+        "caption": "akhir nya naik ke mythic!",
+        "imageUrl": "https://dailyspin.id/wp-content/uploads/2022/03/20BB5302-7D13-4E09-9326-DFB808A65C4A.jpeg",
+        "TagId": 3,
+        "UserId": 4,
+        "like": 0
+    },
+    {
+        "caption": "yeah!",
+        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyRz3Yl4v8Ww3gPx4_GvbgOg0EMmLs21Jdzw&usqp=CAU",
+        "TagId": 4,
+        "UserId": 5,
+        "like": 0
+    }
+]

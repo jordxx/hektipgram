@@ -1,0 +1,81 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Profile</title>
+  </head>
+  <body>
+    <%- include('./partials/nav') %>
+    <div class="container m-auto my-24">
+      <div
+        class="relative max-w-md mx-auto md:max-w-2xl min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-xl"
+      >
+        <div class="px-6">
+          <a href="/profile/edit/<%= user.Profile.id %>">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </a>
+          <div class="flex flex-wrap justify-center">
+            <div class="w-full flex justify-center">
+              <div class="relative">
+                <img
+                  src="https://manager.almadarisp.com/user/img/user.png"
+                  class="shadow-xl rounded-full align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-[150px]"
+                />
+              </div>
+            </div>
+            <div class="w-full text-center mt-20">
+              <div class="flex justify-center lg:pt-4 pt-8 pb-0">
+                <div class="p-3 text-center">
+                  <span
+                    class="text-xl font-bold block uppercase tracking-wide text-slate-700"
+                    ><%= user.Posts.length %></span
+                  >
+                  <span class="text-sm text-slate-400">Photos</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="text-center mt-2">
+            <h3 class="text-2xl text-slate-700 font-bold leading-normal mb-1">
+              <%= user.Profile.fullName %>
+            </h3>
+            <div class="text-xs mt-0 mb-2 text-slate-400 font-bold uppercase">
+              <i
+                class="fas fa-map-marker-alt mr-2 text-slate-400 opacity-75"
+              ></i
+              >@<%= user.userName %>
+            </div>
+          </div>
+          <div class="mt-6 py-6 border-t border-slate-200 text-center"></div>
+        </div>
+      </div>
+
+      <div class="container grid grid-cols-3 gap-2 mx-auto">
+        <% user.Posts.forEach(p => { %>
+        <div class="w-full rounded">
+          <a href="/comment/<%=p.id%>">
+            <img
+              class="rounded-md h-80 w-full object-cover object-bottom"
+              src="<%=p.imageUrl%>"
+              alt="image"
+            />
+          </a>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+  </body>
+</html>

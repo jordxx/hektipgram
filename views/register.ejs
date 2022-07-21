@@ -1,0 +1,132 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Register</title>
+  </head>
+  <body>
+    <div class="w-full h-screen font-sans bg-blue-800 bg-cover bg-landscape">
+      <div
+        class="container flex items-center justify-center flex-1 h-full mx-auto"
+      >
+        <div class="w-full max-w-lg">
+          <div class="leading-loose">
+            <form
+              action="/register"
+              method="post"
+              class="max-w-sm p-10 m-auto bg-white bg-opacity-25 rounded shadow-xl"
+            >
+              <p class="mb-8 text-2xl font-light text-center text-white">
+                MAKE NEW ACCOUNT
+              </p>
+              <div class="mb-2">
+                <div class="relative">
+                  <input
+                    type="text"
+                    id="fullName"
+                    name="fullName"
+                    class="rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                    placeholder="Name"
+                  />
+                </div>
+              </div>
+
+              <div class="mb-2">
+                <div class="relative">
+                  <div class="flex flex-wrap">
+                    <div class="flex items-center">
+                      <label class="text-white mx-3">Gender</label>
+                      <input
+                        id="gender"
+                        type="radio"
+                        value="Male"
+                        name="gender"
+                        class="w-4 h-4 text-red-600 bg-gray-100 border-gray-300 focus:ring-red-500"
+                      />
+                      <label
+                        for="red-radio"
+                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                        >Male</label
+                      >
+                      <input
+                        id="gender"
+                        type="radio"
+                        value="Female"
+                        name="gender"
+                        class="ml-3 w-4 h-4 text-red-600 bg-gray-100 border-gray-300 focus:ring-red-500 dark:focus:ring-red-600"
+                      />
+                      <label
+                        for="red-radio"
+                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                        >Female</label
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-2">
+                <div class="relative">
+                  <input
+                    type="date"
+                    id="dateOfBirth"
+                    name="dateOfBirth"
+                    class="rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                    placeholder="Birthday"
+                  />
+                </div>
+              </div>
+
+              <div class="mb-2">
+                <div class="relative">
+                  <input
+                    type="text"
+                    id="userName"
+                    name="userName"
+                    class="rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                    placeholder="Username"
+                  />
+                </div>
+              </div>
+
+              <div class="mb-2">
+                <div class="relative">
+                  <input
+                    type="text"
+                    id="email"
+                    name="email"
+                    class="rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                    placeholder="email@mail.com"
+                  />
+                </div>
+              </div>
+
+              <div class="mb-2">
+                <div class="relative">
+                  <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    class="rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                    placeholder="password"
+                  />
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between mt-4">
+                <button
+                  type="submit"
+                  class="py-2 px-4 bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg"
+                >
+                  Register
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

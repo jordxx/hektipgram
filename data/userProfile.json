@@ -1,0 +1,26 @@
+[
+    {
+        "fullName": "Diluc Tamvan",
+        "gender": "Male",
+        "dateOfBirth": "1990-01-05",
+        "UserId": 2
+    },
+    {
+        "fullName": "Razor Wolv",
+        "gender": "Male",
+        "dateOfBirth": "1996-11-17",
+        "UserId": 3
+    },
+    {
+        "fullName": "Mona Lisa",
+        "gender": "Female",
+        "dateOfBirth": "1999-10-20",
+        "UserId": 4
+    },
+    {
+        "fullName": "Lisa BlackPink",
+        "gender": "Female",
+        "dateOfBirth": "1997-06-07",
+        "UserId": 5
+    }
+]

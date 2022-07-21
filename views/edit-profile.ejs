@@ -1,0 +1,104 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Edit Profile</title>
+  </head>
+  <body>
+    <%- include('./partials/nav') %>
+
+    <div class="container m-auto my-12 max-w-6xl">
+      <form action="/profile/edit/<%= profile.id %>" method="post">
+        <div class="mb-6">
+          <label
+            for="fullName"
+            class="block mb-2 text-sm font-medium text-black"
+            >Name</label
+          >
+          <input
+            type="fullName"
+            id="fullName"
+            name="fullName"
+            class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+            value="<%= profile.fullName %>"
+            required
+          />
+        </div>
+
+        <div class="mb-6">
+          <label for="gender" class="block mb-2 text-sm font-medium text-black"
+            >Gender</label
+          >
+
+          <label>Male</label>
+          <input type="radio" for="gender" id="gender" name="gender"
+          value="Male" <%= profile.gender === 'Male' ? "checked" : "" %>/>
+          <label>Female</label>
+          <input type="radio" for="gender" id="gender" name="gender"
+          value="Female"<%= profile.gender === 'Female' ? "checked" : "" %>/>
+        </div>
+
+        <div class="mb-6">
+          <label
+            for="dateOfBirth"
+            class="block mb-2 text-sm font-medium text-black"
+            >Birthday</label
+          >
+          <input
+            type="date"
+            name="dateOfBirth"
+            id="dateOfBirth"
+            value="<%= new Date(profile.dateOfBirth).toISOString().slice(0, 10) %>"
+          />
+        </div>
+
+        <input
+          type="text"
+          name="UserId"
+          id="UserId"
+          value="<%= profile.UserId %>"
+          hidden
+        />
+
+        <div class="mb-6">
+          <label
+            for="userName"
+            class="block mb-2 text-sm font-medium text-black"
+            >Username</label
+          >
+          <input
+            type="userName"
+            id="userName"
+            name="userName"
+            class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+            value="<%= profile.User.userName %>"
+            required
+          />
+        </div>
+
+        <div class="mb-6">
+          <label for="email" class="block mb-2 text-sm font-medium text-black"
+            >Email</label
+          >
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+            value="<%= profile.User.email %>"
+            required
+          />
+        </div>
+
+        <button
+          type="submit"
+          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        >
+          Update account
+        </button>
+      </form>
+    </div>
+  </body>
+</html>
